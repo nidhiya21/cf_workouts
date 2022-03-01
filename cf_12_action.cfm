@@ -9,14 +9,12 @@
 <body>
     <div class="container mt-3">
         <h2>Task 12</h2>
+        <cfset inputNum = "#inputNumber#" />
         <cfquery name = "GetSpecificUser" datasource = "cf-user" > 
-            SELECT *
-            FROM users 
+            SELECT firstName 
+            FROM users ORDER BY firstName LIMIT <cfqueryparam value="#inputNum#" cfsqltype="cf_sql_integer">,1;
         </cfquery>
-         <cfoutput query = "GetSpecificUser"> 
-        <cfset x = GetSpecificUser.firstName[5]>
-        <font size = "-1">#x#</font> 
-        </cfoutput> 
+        <cfoutput>#GetSpecificUser.firstName#</cfoutput>
         <cfquery name = "GetUser" datasource = "cf-user" > 
         SELECT *
         FROM users 
