@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Task 7</title>
+    <title>Task 8</title>
 </head>
 <body>
 <form  name="form" action="" method="post">
-    <h2>Task 7</h2>
+    <h2>Task 8</h2>
     <div class="form-group col-md-4">
 		<label>Enter Key:</label>
 		<input type="text"    name="textKey" id="textKey"/>
@@ -31,8 +31,16 @@
 <cfset Session.mystruct = structNew()>
 </cflock>
 </cfif>
-<cfif StructKeyExists(Session, "mystruct")>
+<cfif StructKeyExists(Session, "mystruct")> 
+<cfif NOT StructKeyExists(Session.mystruct,"#form.textKey#")> 
 <cfset Session.mystruct["#Form.textKey#"] = #form.textVal#> 
+<cfelse>
+    <cfscript>
+       
+        StructUpdate(Session.mystruct,"#Form.textKey#",#form.textVal#); 
+      
+ </cfscript>
+</cfif>
 </cfif>
 <cfdump var="#Session.mystruct#" > 
 </cfif>

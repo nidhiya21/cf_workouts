@@ -8,14 +8,14 @@
 <body>
     <div class="container mt-3">
         <h2>Task 3</h2>
-        <cfform>
+        <form>
           <div class="mb-3 mt-3">
             <label for="number">Enter Number:</label>
-            <cfinput name="inputNumber" type="text" >
+            <input name="inputNumber" type="text" >
           </div>
  
-          <cfinput name="inputSubmit" class="btn btn-primary" type="submit"  >
-        </cfform>
+          <input name="inputSubmit" class="btn btn-primary" type="submit"  >
+        </form>
       </div>
       <cfif isDefined("form.inputSubmit")>
         <cfscript>
