@@ -9,15 +9,15 @@
     <body>
         <div class="container mt-3">
             <h2>Task 2</h2>
-            <cfform>
+            <form>
               <div class="mb-3 mt-3">
                 <label for="number">Enter Number:</label>
-                <cfinput name="inputNumber" type="text"   validate="regex"
+                <input name="inputNumber" type="text"   validate="regex"
                 pattern="[1-5]"  message="Please enter only valid integers between 1 to 5!">
               </div>
      
-              <cfinput name="inputSubmit" class="btn btn-primary" type="submit" validateAt="onSubmit" >
-            </cfform>
+              <input name="inputSubmit" class="btn btn-primary" type="submit" validateAt="onSubmit" >
+            </form>
           </div>
     <cfif (isDefined("form.inputSubmit"))>
         <cfswitch expression="#form.inputNumber#"> 
