@@ -1,0 +1,32 @@
+*{
+margin:0;
+padding:0;
+box-sizing: border-box;
+}
+body{
+width:100%; 
+font-family: "Segoe UI","Liberation Sans",sans-serif;
+background-color: hsl(210,8%,97.5%)!important;
+}
+.logout{
+text-align: right;
+margin-right:40px;
+
+}
+.logoutlink{
+text-decoration: none;
+cursor: pointer;
+}
+.outer{
+
+/* border: 5px solid #FFFF00; */
+text-align: center;
+
+}
+.page-desc{
+    text-align: center;
+
+}
+.role{
+    text-transform: uppercase;
+}
