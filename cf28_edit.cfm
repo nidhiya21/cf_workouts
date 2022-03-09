@@ -14,21 +14,21 @@
 <html>
     <head> 
     <title>Content Pages</title> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     </head> 
     <body>  
+        <h3>Edit Page</h3>
             <form name="form" method="post" action="">
-                
-                <table>
-                    <tr>
-                        <th>Page name</th>
-                        <td><input type="text" name="pagename"  ></td>
-                    </tr>
-                    <tr>
-                        <th>Page description</th>
-                        <td><input type="text" name="pagedesc"  ></td>
-                    </tr>
-                </table>
-                <input type="submit" value="sumbit" name="formSubmit">
+            <div class="mb-3 mt-3">
+                    <label for="pagename">Page Name:</label>
+                    <input name="pagename" type="text">
+            </div>
+            <div class="mb-3 mt-3">
+                    <label for="pagedesc">Page Description:</label>
+                    <input name="pagedesc" type="text">
+            </div>
+            <input name="formSubmit" class="btn btn-primary" type="submit" >
+            <input type="Reset" value="Clear Form"  class="btn btn-primary">
 
             </form>
             

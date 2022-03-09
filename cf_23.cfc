@@ -1,5 +1,5 @@
 <cfcomponent output="false"> 
-<cffunction name="saveEmployee" access="public" returntype="structure">
+<cffunction name="saveEmployee" access="public">
 <cfargument name="position" type="string" required="yes" >
 <cfargument name="relocate" type="string" required="yes" >
 <cfargument name="start_date" type="string" required="yes" >
@@ -11,26 +11,28 @@
 <cfargument name="emailAddress" type="string" required="yes" >
 <cfargument name="phoneNumber" type="numeric" required="yes" >
 
-<cfquery name="saveEmployeeDetails" datasource="cf_task_employee" >
-INSERT INTO clients
+<cfquery name="saveEmployeeDetails" datasource="cf_task_employee" result="employeeResult">
+ 
+INSERT INTO employee_application
 ( 
 position,relocate,start_date,website,resume,salary,firstName,lastName,emailAddress,phoneNumber
 )
-VALUES
+VALUES 
 ( 
-<cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.Field17#" />
-,<cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.Field19#" />
-,<cfqueryparam cfsqltype="CF_SQL_TIME" value="#arguments.Field20#" />
-,<cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.Field14#" />
-,<cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.Field12#" />
-,<cfqueryparam cfsqltype="cf_sql_integer" value="#arguments.Field16#" />
-,<cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.Field22#" />
-,<cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.Field23#" />
-,<cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.Field13#" />
-,<cfqueryparam cfsqltype="cf_sql_integer" value="#arguments.Field25#" />
+<cfqueryparam cfsqltype="cf_sql_varchar" value="#position#" />
+,<cfqueryparam cfsqltype="cf_sql_varchar" value="#relocate#" />
+,<cfqueryparam cfsqltype="cf_sql_date" value="#start_date#" />
+,<cfqueryparam cfsqltype="cf_sql_varchar" value="#website#" />
+,<cfqueryparam cfsqltype="cf_sql_varchar" value="#resume#" />
+,<cfqueryparam cfsqltype="cf_sql_integer" value="#salary#" />
+,<cfqueryparam cfsqltype="cf_sql_varchar" value="#firstName#" />
+,<cfqueryparam cfsqltype="cf_sql_varchar" value="#lastName#" />
+,<cfqueryparam cfsqltype="cf_sql_varchar" value="#emailAddress#" />
+,<cfqueryparam cfsqltype="cf_sql_integer" value="#phoneNumber#" />
 )
-)
+ 
 </cfquery>
-<cfreturn />
+<cfset getNumberOfRecords = listLen(#employeeResult.generated_key#)> 
+<cfreturn getNumberOfRecords>
 </cffunction>
 </cfcomponent>

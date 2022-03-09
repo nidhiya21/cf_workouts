@@ -1,6 +1,7 @@
 
 <html>
 <head>
+    <link href="./css/welcome.css" rel="stylesheet" type="text/css"/> 
 </head>
 <body>
     <div class="container mt-3">
@@ -13,8 +14,10 @@
         <cfset pagedesc=ut.pagedesc>
         <cfoutput>
             <a href="cf28_welcome.cfm">Back</a></br> 
-             Page name:#pagename#</br>
-             Page description: #pagedesc#
+            <div class="page-desc">
+             <b>Page name : </b>#pagename#</br></br>
+             <b>Page description : </b> #pagedesc#
+            </div>
         
         </cfoutput>
     </div>

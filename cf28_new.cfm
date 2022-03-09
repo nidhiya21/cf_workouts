@@ -1,27 +1,25 @@
 <html> 
 <head> 
 <title>Add Page</title> 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head> 
 <body> 
+<div class="container mt-3">
 <h2>Add Page</h2> 
-<table> 
 <form action="cf28_new.cfm" method="post"> 
-<tr> 
-<td>Page name:</td>  
-<td><input type="text" name="pagename" ></td> 
-</tr> 
-<tr> 
-<td>Page Description:</td> 
-<td><input type="text" name="pagedesc" ></td> 
-</tr> 
-<tr>
-
-<td>&nbsp;</td> 
-<td><input type="Submit" value="Submit" name="formSubmit">&nbsp;<input type="Reset" 
-value="Clear Form"></td> 
-</tr> 
-</form> 
+        <div class="mb-3 mt-3">
+                <label for="pagename">Page Name:</label>
+                <input name="pagename" type="text">
+        </div>
+        <div class="mb-3 mt-3">
+                <label for="pagedesc">Page Description:</label>
+                <input name="pagedesc" type="text">
+        </div>
+        <input name="formSubmit" class="btn btn-primary" type="submit" >
+        <input type="Reset" value="Clear Form"  class="btn btn-primary">
+</form>     
 </table> 
+</div>
 </body> 
 </html>
 <cfif StructKeyExists(form,'formSubmit')>
@@ -30,7 +28,7 @@ value="Clear Form"></td>
 update contentpages
 set pagename=<cfqueryparam cfsqltype="cf_sql_varchar" value="#form.pagename#">,
 pagedesc=<cfqueryparam cfsqltype="cf_sql_varchar"  value="#form.pagedesc#">
-        where pageid=<cfqueryparam cfsqltype="cf_sql_integer" value="#url.id#">
+where pageid=<cfqueryparam cfsqltype="cf_sql_integer" value="#url.id#">
 
 </cfquery> 
 <cflocation url="cf_welcome.cfm" addtoken="No">

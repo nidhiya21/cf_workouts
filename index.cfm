@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Task 14</title>
+        <title>Task 25</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
         
     </head>
@@ -12,14 +12,11 @@
         <div class="container">
             <div class="row">
                 <h2>Tak 25</h2> 
-                <form action="cf_14.cfm" name="form" method="post" enctype="multipart/form-data" > 
+                <form action="index.cfm" name="form" method="post" enctype="multipart/form-data" > 
+                
                 <div class="form-group col-md-4">
-                    <label>Image Name</label>
-                    <input type="text" name="imageName" class="form-control"> 
-                </div><br>
-                <div class="form-group col-md-4">
-                    <label>Image Description</label>
-                    <textarea name="imageDescription" class="form-control"> </textarea>
+                    <label> Description</label>
+                    <textarea name="paragraph" class="form-control"> </textarea>
                 </div><br>
                 
                 <div class="form-group col-md-4"> 
@@ -29,15 +26,40 @@
                 </form> 
             </div>
             <cfif StructKeyExists(Form,'formSubmit')>
-                <cfquery  datasource="cf_task_employee"  name="addPage">
-                    insert into contentpages(pagename,pagedesc)
-                    values(
-                    "#form.pagename#","#form.pagedesc#"
-                    
-                    )
-                    </cfquery>
-             </cfif>
-            
+ 
+                <cfset string ="#form.paragraph#">
+                <cfset words = reMatch("[[:word:]]+", string)>
+                <cfset wordCount = structNew()>
+                <cfloop index="word" array="#words#"> 
+                <cfif structKeyExists(wordCount, word)> 
+                <cfset wordCount[word]++> 
+                <cfelse>
+                 <cfset wordCount[word] = 1>
+                </cfif> 
+                </cfloop>
+                <cfset sorted = structSort(wordCount, "numeric", "desc")>
+                <table border="1" width="400">
+                     <tr> <th width="50%">Word</th> 
+                        <th>Count</th> 
+                    </tr>
+               <cfloop index="word" array="#sorted#"> 
+                <cfoutput>
+                     <tr> 
+                    <td>#word#</td> 
+                     <td>#wordCount[word]#</td> 
+                    </tr>
+               </cfoutput> 
+               <cfquery  datasource="cf_task_employee"  name="addPage">
+
+                insert into tags(paragraph,count)
+                values(
+                "#word#",#wordCount[word]#
+                
+                )
+                </cfquery> 
+               
+               </cfloop>                 
+                </cfif>
         </div>
     </body> 
 </html>
