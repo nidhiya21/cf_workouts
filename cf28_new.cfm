@@ -29,7 +29,6 @@ update contentpages
 set pagename=<cfqueryparam cfsqltype="cf_sql_varchar" value="#form.pagename#">,
 pagedesc=<cfqueryparam cfsqltype="cf_sql_varchar"  value="#form.pagedesc#">
 where pageid=<cfqueryparam cfsqltype="cf_sql_integer" value="#url.id#">
-
 </cfquery> 
 <cflocation url="cf_welcome.cfm" addtoken="No">
 <cfelseif IsDefined("form.pagename")  and  IsDefined("form.pagedesc")>

@@ -5,8 +5,7 @@
         <meta http-equiv="X-UA-Compatible">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Task 14</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">        
     </head>
     <body>
         <div class="container">
@@ -31,8 +30,7 @@
                 </div> 
                 </form> 
             </div>
-            <cfif StructKeyExists(Form,'formSubmit')>
-                
+            <cfif StructKeyExists(Form,'formSubmit')>               
                 <cfif len(trim(form.fileUpload))>
                     <cfset lmt = 1000000 />
                     <cfif cgi.content_length LTE lmt>
