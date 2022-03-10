@@ -7,7 +7,6 @@
     <title>Task 13</title>
 </head>
 <body>
-    
     <div class="container mt-3">
         <h2>Task 13</h2>
         <form  action="cf_13.cfm"  name="form"  method="post">
@@ -25,10 +24,8 @@
         <cfset occurrences
         = ( Len(string) -
             Len(Replace(string,substring,'','all'))
-            ) / Len(substring) > 
-           
-       <b> <cfdump var="#occurrences#"> times</b>
-      
-        </cfif>
+            ) / Len(substring) >            
+       <b> <cfdump var="#occurrences#"> times</b>     
+    </cfif>
 </body>
 </html>

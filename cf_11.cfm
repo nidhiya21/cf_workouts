@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/bootstrap.css" rel="stylesheet" type="text/css"/> 
     <title>Task 11</title>
 </head>
 <body>
@@ -22,11 +22,11 @@
     <div class="container mt-3">
         <h2>Task 11</h2>
         <cfset res = mulitiply(1,2)>
-        Result is : <cfdump var=#res#> <br>
+             Result is : <cfdump var=#res#> <br>
         <cfset res1 = mulitiply(1,2,3)>
-        Result is :<cfdump var=#res1#><br>
+             Result is :<cfdump var=#res1#><br>
         <cfset res2 = mulitiply(1,2,3,4)>
-        Result is :<cfdump var=#res2#> <br>
+             Result is :<cfdump var=#res2#> <br>
     </div>
 </body>
 </html>
