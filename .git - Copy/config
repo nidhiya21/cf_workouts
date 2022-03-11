@@ -1,0 +1,40 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+[remote "origin"]
+	url = https://github.com/nidhiya21/cf_workouts.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
+[branch "feb28"]
+	remote = origin
+	merge = refs/heads/feb28
+[branch "mar1"]
+	remote = origin
+	merge = refs/heads/mar1
+[branch "mar2"]
+	remote = origin
+	merge = refs/heads/mar2
+[branch "mar3"]
+	remote = origin
+	merge = refs/heads/mar3
+[branch "mar4"]
+	remote = origin
+	merge = refs/heads/mar4
+[branch "mar7"]
+	remote = origin
+	merge = refs/heads/mar7
+[branch "mar8"]
+	remote = origin
+	merge = refs/heads/mar8
+[branch "mar09"]
+	remote = origin
+	merge = refs/heads/mar09
+[branch "mar10"]
+	remote = origin
+	merge = refs/heads/mar10

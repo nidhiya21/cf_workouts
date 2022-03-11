@@ -7,6 +7,8 @@
 	<cffunction name="onApplicationStart" returntype="boolean" >		
 		<cfset application.cf_23 = createObject("component",'cf_23') />
 		<cfset application.tagCloud = createObject("component",'tagcloud') />
+		<cfset application.cf_5 = createObject("component",'cf_5') />
+		<cfset application.cf_11 = createObject("component",'cf_11') />
 		<cfreturn true />
 	</cffunction>
 	<cffunction name="onRequestStart" returntype="boolean" >
